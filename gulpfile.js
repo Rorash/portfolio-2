@@ -7,11 +7,11 @@ livereload = require('gulp-livereload'),
 server = require('gulp-server-livereload');
  
 gulp.task('sass', function () {
-    gulp.src('./scss/*.scss')
+    gulp.src('./scss/style.scss')
         .pipe(sass())
         .pipe(rename("style.css"))
         .pipe(minifyCSS())
-        .pipe(autoprefixer(['last 2 versions']))
+        //.pipe(autoprefixer(['last 2 versions']))
         .pipe(gulp.dest('./'));
 
 });
@@ -29,5 +29,6 @@ gulp.task('webserver', function() {
 gulp.task('watch', function () {
 	gulp.watch('./scss/*.scss', ['sass'])
 	gulp.watch('./scss/**/*.scss', ['sass'])
+	gulp.watch('./scss/**/**/*.scss', ['sass'])
 });
-gulp.task('default', ['watch','webserver']);
+gulp.task('default', ['sass','watch','webserver']);
