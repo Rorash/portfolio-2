@@ -11,15 +11,20 @@
             font: $light 12px $gfont;
             display: inline-block;
             a {
+            	transition:all 0.3s;
                 color: #aaa;
                 display: block;
                 line-height: 32px;
+                transition: all 0.3s;
                 &::before {
                     content: '|';
                     margin: 0 3px;
                     font-size: 13px;
                     position: relative;
                     top: -1px;
+                }
+                &:hover{
+                	color: $ghcol;
                 }
             }
             &:first-child {
@@ -38,15 +43,24 @@
             li {
                 font-size: 13px;
                 float: left;
-                a i {
-                    color: #aaa;
-                    display: block;
-                    width: 34px;
-                    height: 33px;
-                    line-height: 33px;
-                    border-left: 1px solid $scol;
-                    &:last-child {
-                        border-right: 1px solid $scol;
+                a {
+                    i {
+                        transition: all 0.3s;
+                        color: #aaa;
+                        display: block;
+                        width: 34px;
+                        height: 33px;
+                        line-height: 33px;
+                        border-left: 1px solid $scol;
+                        &:last-child {
+                            border-right: 1px solid $scol;
+                        }
+                    }
+                    &:hover{
+                    	i{
+                    		background:$ghcol;
+                    		color:white;
+                    	}
                     }
                 }
             }
@@ -111,6 +125,7 @@
                         }
                     }
                     > a {
+                        transition: all 0.3s;
                         padding: 28px 15px !important;
                         line-height: 20px;
                         &.active, &:hover, &:focus {
@@ -257,9 +272,12 @@
         &:hover {
             .icon {
                 color: $ghcol;
+				animation: flow-shadow 0.3s ease-in-out;
+        	
             }
         }
         .icon {
+        	transition: color 0.6s ease-in-out;
             color: #888;
             font-size: 3em;
             margin-bottom: 14px;
@@ -544,8 +562,24 @@ section.news {
                 width: 100%;
                 height: auto;
             }
+            &:hover:after{
+            	opacity:0.5;
+				transition: opacity 0.5s ease-in;
+            }
+            &:after{
+            	content:'';
+            	display: block;
+            	background:$ghcol;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				z-index: 1;
+				opacity:0;
+            }
             .member-name {
                 position: absolute;
+                z-index: 2;
                 bottom: 12px;
                 right: 10px;
                 color: #fff;
@@ -670,6 +704,7 @@ section.news {
         &:hover {
             top: -3px;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in;
         }
         .tarif-lable {
             padding: 15px 0;
@@ -731,7 +766,7 @@ section.news {
 }
 
 .our-clients {
-padding-bottom: 80px;
+    padding-bottom: 80px;
     > h2 {
         margin-bottom: 0;
     }
@@ -807,8 +842,8 @@ footer {
         }
     }
     .subscribe {
-    	margin-top: 15px;
-margin-bottom: 20px;
+        margin-top: 15px;
+        margin-bottom: 20px;
         input[type="text"] {
             color: #888;
             font-size: 12px;

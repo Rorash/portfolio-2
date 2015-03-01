@@ -1,0 +1,111 @@
+@keyframes flow-shadow {
+  0%   {
+  	text-shadow: 0 0 3px $ghcol;
+}
+  100% {text-shadow: 4px 4px 4px #ccc;}
+}
+
+
+@keyframes bounceLeft{
+		0% {
+		opacity: 0;
+		transform: translateX(-2000px);
+	}
+	
+	60% {
+		opacity: 1;
+		transform: translateX(30px);
+	}
+	
+	80% {
+		transform: translateX(-10px);
+	}
+	
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes bounceIn {
+	0% {
+		opacity: 0;
+		transform: scale(.3);
+	}
+	
+	50% {
+		opacity: 1;
+		transform: scale(1.05);
+	}
+	
+	70% {
+		transform: scale(.9);
+	}
+	
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes flipInX {
+    0% {
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+    
+    40% {
+        transform: perspective(400px) rotateX(-10deg);
+    }
+    
+    70% {
+        transform: perspective(400px) rotateX(10deg);
+    }
+    
+    100% {
+        transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+@keyframes lightSpeedIn {
+	0% { transform: translateX(100%) skewX(-30deg); opacity: 0; }
+	60% { transform: translateX(-20%) skewX(30deg); opacity: 1; }
+	80% { transform: translateX(0%) skewX(-15deg); opacity: 1; }
+	100% { transform: translateX(0%) skewX(0deg); opacity: 1; }
+}
+
+.animated1{
+	animation: lightSpeedIn 1s ease-in 200ms both;
+}
+
+.animated4,.animated9, .animated3{
+	animation: flipInX 1s ease-in 500ms both;
+}
+
+.animated5,.animated2{
+	animation: bounceLeft 1s ease-in 100ms both;
+}
+
+.animated6{
+animation:bounceIn 1s ease-in 600ms both;
+}
+
+.animated7{
+	animation:bounceIn 1s ease-in 500ms both;
+}
+
+.animated8{
+	animation:fadeInDown 1s ease-in 500ms both;
+}
