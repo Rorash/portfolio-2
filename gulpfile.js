@@ -18,7 +18,7 @@ gulp.task('sass', function () {
         }))
         .pipe(rename("style.css"))
         //.pipe(minifyCSS())
-        .pipe(autoprefixer(['last 2 versions']))
+        //.pipe(autoprefixer(['last 2 versions']))
         .pipe(gulp.dest('./'));
 
 });

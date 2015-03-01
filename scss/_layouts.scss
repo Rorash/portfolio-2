@@ -1,0 +1,117 @@
+.headline__in, .headline__in, .site-nav__in,.service,.purchase__in, .news, .our-team,.results__in, .pricing, .our-clients, .footer__in {
+    @extend .container;
+    /*	  @media (min-width: $screen-sm-min) {
+        width: $container-sm;
+      }
+      @media (min-width: $screen-md-min) {
+        width: $container-md;
+      }
+      @media (min-width: $screen-lg-min) {
+        width: $container-lg;
+      }*/
+}
+.latest__in,{
+	@extend .container-fluid;
+}
+
+.wrap,.service__in, .work-cards, .news__in, .members, .price-cards,.our-clients-carousel, .footer-widgets,.bottom-line{
+    @include make-row;
+}
+
+.hidden-header {
+    height: 112px;
+}
+
+.site-header {
+    .headline {
+        .location {
+            @include make-sm-column(7);
+            @extend .hidden-xs;
+        }
+        .social {
+            @include make-xs-column(12);
+            @include make-sm-column(5);
+            @extend .text-center;
+            @extend .pull-right;
+        }
+    }
+    .site-nav {
+        @extend .navbar, .navbar-default;
+        .collapse-part {
+            @extend .navbar-collapse, .collapse;
+            .search-side {
+                @extend .navbar-form, .navbar-right;
+            }
+            .gen-menu {
+                @extend .nav, .navbar-nav, .navbar-right;
+            }
+        }
+    }
+}
+
+.service{
+	.card{
+		@include make-sm-column(3);
+	}
+}
+
+section.latest{
+.card{
+	@include make-sm-column(3);
+}
+}
+
+.news{
+.latest-news{
+	@include make-sm-column(8);
+}
+.testi{
+	@include make-sm-column(4);
+}
+}
+
+.our-team{
+	.members{
+		.member-card{
+			@include make-sm-column(3);
+		}
+		
+	}
+}
+
+.results{
+	.results__in{
+		.result-item{
+			@include make-sm-column(3);
+		}
+	}
+}
+
+.pricing{
+	.price-cards{
+		.price-card{
+			@include make-sm-column(3);
+		}
+	}
+}
+
+.our-clients{
+	.our-clients-carousel{
+		.owl-outer{
+			@include make-sm-column(12);
+		}
+	}
+}
+footer{
+	.widget-col{
+		@include make-sm-column(3);
+	}
+	.bottom-line{
+		.copy{
+			@include make-sm-column(6);
+		}
+	.footer-nav{
+			@include make-sm-column(6);
+		}
+	}
+}
